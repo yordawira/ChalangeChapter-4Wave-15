@@ -3,7 +3,7 @@
     <color name="colorPrimary">#795548</color>
     <color name="colorPrimaryDark">#6D4C41</color>
     <color name="colorAccent">#D81B60</color>
-    <color name="warnaBg">#5D4037</color>
-    <color name="bgtlstngh">#f90000</color>
-    <color name="clrvs">#2d2d2d</color>
+    <color name="colorSurface">#5D4037</color>
+    <color name="title">#f90000</color>
+    <color name="versus">#2d2d2d</color>
 </resources>
