@@ -10,4 +10,5 @@
     <dimen name="sizeTittle2">100dp</dimen>
     <dimen name="namePlayer">28sp</dimen>
     <dimen name="buttonChooseReset">80dp</dimen>
+
 </resources>

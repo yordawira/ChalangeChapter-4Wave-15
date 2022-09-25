@@ -1,123 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical">
-
-    <LinearLayout
+    
+        <LinearLayout
         android:layout_width="@dimen/sizeTittle2"
         android:layout_height="@dimen/sizeTittle2"
         android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/ic_tittle"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="@dimen/buttonLayout"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="horizontal">
-
-        <LinearLayout
-            style="@style/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <TextView
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/namePlayer1"
-                android:textSize="@dimen/namePlayer"
-                android:fontFamily="sans-serif-condensed"/>
-
+        
             <ImageView
-                android:id="@+id/iv_scissor1"
-                android:layout_width="@dimen/buttonEmerge"
-                android:layout_height="@dimen/buttonEmerge"
-                android:src="@drawable/ic_scissor" />
-
-            <ImageView
-                android:id="@+id/iv_rock1"
-                android:layout_width="@dimen/buttonEmerge"
-                android:layout_height="@dimen/buttonEmerge"
-                android:src="@drawable/ic_rock" />
-
-            <ImageView
-                android:id="@+id/iv_paper1"
-                android:layout_width="@dimen/buttonEmerge"
-                android:layout_height="@dimen/buttonEmerge"
-                android:src="@drawable/ic_paper" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_tittle"/>
 
         </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/ll_player_left"
+            android:layout_width="@dimen/buttonLayout"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+        
+            <LinearLayout
+                style="@style/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/tv_player"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/namePlayer1"
+                    android:textSize="@dimen/namePlayer"
+                    android:fontFamily="sans-serif-condensed"/>
+            
+                <ImageView
+                    android:id="@+id/iv_scissor_player_left"
+                    android:layout_width="@dimen/buttonEmerge"
+                    android:layout_height="@dimen/buttonEmerge"
+                    android:src="@drawable/ic_scissor"/>
+
+                <ImageView
+                    android:id="@+id/iv_rock_player_left"
+                    android:layout_width="@dimen/buttonEmerge"
+                    android:layout_height="@dimen/buttonEmerge"
+                    android:src="@drawable/ic_rock"/>
+
+                <ImageView
+                    android:id="@+id/iv_paper_player_left"
+                    android:layout_width="@dimen/buttonEmerge"
+                    android:layout_height="@dimen/buttonEmerge"
+                    android:src="@drawable/ic_paper"/>
+            </LinearLayout>
+        
         <LinearLayout
             android:layout_width="@dimen/tittleMiddle"
             android:layout_height="@dimen/forWrite"
             android:layout_gravity="center"
-
+            
             android:gravity="center">
-
+            
             <ImageView
-                android:id="@+id/iv_vs"
+                android:id="@+id/iv_tittle_middle"
                 android:layout_width="@dimen/tittleMiddle"
                 android:layout_height="wrap_content"
-                android:src="@drawable/ic_vs" />
-
-
+                android:src="@drawable/ic_vs"/>
+            
         </LinearLayout>
 
         <LinearLayout
-            style="@style/button"
-            android:layout_width="wrap_content"
+            android:id="@+id/ll_player_right"
+            android:layout_width="@dimen/buttonLayout"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                android:layout_gravity="center"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                style="@style/button"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/namePlayer2"
-                android:textSize="@dimen/namePlayer"
-                android:fontFamily="sans-serif-condensed"/>
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/tv_player_cpu"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/namePlayer2"
+                    android:textSize="@dimen/namePlayer"
+                    android:fontFamily="sans-serif-condensed"/>
 
-            <ImageView
-                android:id="@+id/iv_scissor2"
-                android:layout_width="@dimen/buttonEmerge"
-                android:layout_height="@dimen/buttonEmerge"
-                android:src="@drawable/ic_scissor" />
+                <ImageView
+                    android:id="@+id/iv_scissor_player_right"
+                    android:layout_width="@dimen/buttonEmerge"
+                    android:layout_height="@dimen/buttonEmerge"
+                    android:src="@drawable/ic_scissor"/>
 
-            <ImageView
-                android:id="@+id/iv_rock2"
-                android:layout_width="@dimen/buttonEmerge"
-                android:layout_height="@dimen/buttonEmerge"
-                android:src="@drawable/ic_rock" />
+                <ImageView
+                    android:id="@+id/iv_rock_player_right"
+                    android:layout_width="@dimen/buttonEmerge"
+                    android:layout_height="@dimen/buttonEmerge"
+                    android:src="@drawable/ic_rock"/>
 
-            <ImageView
-                android:id="@+id/iv_paper2"
-                android:layout_width="@dimen/buttonEmerge"
-                android:layout_height="@dimen/buttonEmerge"
-                android:src="@drawable/ic_paper" />
+                <ImageView
+                    android:id="@+id/iv_paper_player_right"
+                    android:layout_width="@dimen/buttonEmerge"
+                    android:layout_height="@dimen/buttonEmerge"
+                    android:src="@drawable/ic_paper"/>
+            </LinearLayout>
 
         </LinearLayout>
-    </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        </LinearLayout>
 
-        <ImageView
-            android:layout_width="@dimen/buttonChooseReset"
-            android:layout_height="@dimen/buttonChooseReset"
-            android:id="@+id/iv_refresh"
-            android:layout_alignParentRight="true"
-            android:src="@drawable/ic_refresh"
-            android:layout_marginRight="@dimen/marginButton"/>
-    </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
+    <ImageView
+        android:id="@+id/iv_refresh"
+        android:layout_width="@dimen/buttonChooseReset"
+        android:layout_height="@dimen/buttonChooseReset"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/ic_refresh"
+        android:layout_marginRight="@dimen/marginButton"/>
+
+        </RelativeLayout>
 </LinearLayout>
+    \
