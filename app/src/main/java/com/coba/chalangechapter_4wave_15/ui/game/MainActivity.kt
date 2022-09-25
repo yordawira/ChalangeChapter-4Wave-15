@@ -1,5 +1,6 @@
 package com.coba.chalangechapter_4wave_15.ui.game
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.Toast
@@ -13,20 +14,40 @@ abstract class MainActivity : AppCompatActivity(), CallBack {
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
+    override fun kirimBalik(hasil: Int) {
+        binding.ivTittleMiddle.setImageResource(hasil)
+    }
 
+    @SuppressLint("ResourceAsColor")
+    override fun kirimLagi(computer: String) {
+        when (computer) {
+            "scissor" -> {
+                binding.ivScissorPlayerRight.resources.getColor(R.color.colorPrimaryDark)
+            }
+            "rock" -> {
+                binding.ivRockPlayerRight.resources.getColor(R.color.colorPrimaryDark)
+            }
+            else -> {
+                binding.ivPaperPlayerRight.resources.getColor(R.color.colorPrimaryDark)
+            }
+        }
+    }
+
+    @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        var cpu = mutableListOf("scissor","rock","paper")
+        val cpu = mutableListOf("scissor","rock","paper")
         var clicked: Boolean = true
         val listbtn = mutableListOf<ImageView>(binding.ivScissorPlayerLeft, binding.ivScissorPlayerRight, binding.ivRockPlayerLeft, binding.ivRockPlayerRight, binding.ivPaperPlayerLeft, binding.ivPaperPlayerRight)
-        var controller = Controller(this )
+        val controller = Controller(this )
 
         binding.ivScissorPlayerLeft.setOnClickListener{
             if (clicked){
-                var pilcpu = cpu.random()
+                val pilcpu = cpu.random()
                 controller.operation("scissor", pilcpu)
+                binding.ivScissorPlayerLeft.resources.getColor(R.color.colorPrimaryDark)
                 clicked = false
 
             } else {
@@ -36,8 +57,9 @@ abstract class MainActivity : AppCompatActivity(), CallBack {
         }
         binding.ivRockPlayerLeft.setOnClickListener{
             if (clicked){
-                var pilcpu = cpu.random()
+                val pilcpu = cpu.random()
                 controller.operation("rock", pilcpu)
+                binding.ivRockPlayerLeft.resources.getColor(R.color.colorPrimaryDark)
                 clicked = false
 
             } else {
@@ -47,8 +69,9 @@ abstract class MainActivity : AppCompatActivity(), CallBack {
         }
         binding.ivPaperPlayerLeft.setOnClickListener{
             if (clicked){
-                var pilcpu = cpu.random()
+                val pilcpu = cpu.random()
                 controller.operation("paper", pilcpu)
+                binding.ivPaperPlayerLeft.resources.getColor(R.color.colorPrimaryDark)
                 clicked = false
 
             } else {
@@ -64,20 +87,6 @@ abstract class MainActivity : AppCompatActivity(), CallBack {
             binding.ivPaperPlayerRight.background = getDrawable(android.R.color.transparent)
             binding.ivTittleMiddle.setImageResource(R.drawable.ic_vs)
             clicked = true
-        }
-    }
-
-    override fun kirimBalik(hasil: Int) {
-        binding.ivTittleMiddle.setImageResource(hasil)
-    }
-
-    override fun kirimLagi(computer: String) {
-        if (computer == "scissor"){
-            binding.ivScissorPlayerRight
-        } else if (computer == "rock"){
-            binding.ivRockPlayerRight
-        } else {
-            binding.ivPaperPlayerRight
         }
     }
 }
