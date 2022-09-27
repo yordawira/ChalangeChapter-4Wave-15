@@ -10,28 +10,29 @@ import com.coba.chalangechapter_4wave_15.databinding.ActivityMainBinding
 import com.coba.chalangechapter_4wave_15.enum.Controller
 import com.coba.chalangechapter_4wave_15.manager.CallBack
 
-abstract class MainActivity : AppCompatActivity(), CallBack {
+ class MainActivity : AppCompatActivity(), CallBack {
     private val binding: ActivityMainBinding by lazy {
         ActivityMainBinding.inflate(layoutInflater)
     }
-    override fun kirimBalik(hasil: Int) {
-        binding.ivTittleMiddle.setImageResource(hasil)
-    }
 
-    @SuppressLint("ResourceAsColor")
-    override fun kirimLagi(computer: String) {
-        when (computer) {
-            "scissor" -> {
-                binding.ivScissorPlayerRight.resources.getColor(R.color.colorPrimaryDark)
-            }
-            "rock" -> {
-                binding.ivRockPlayerRight.resources.getColor(R.color.colorPrimaryDark)
-            }
-            else -> {
-                binding.ivPaperPlayerRight.resources.getColor(R.color.colorPrimaryDark)
-            }
-        }
-    }
+     override fun SendItBack(result: Int) {
+         binding.ivTittleMiddle.setImageResource(result)
+     }
+
+     @SuppressLint("ResourceAsColor")
+     override fun SendAgain(computer: String) {
+         when (computer) {
+             "scissor" -> {
+                 binding.ivScissorPlayerRight.resources.getColor(R.color.colorPrimaryDark)
+             }
+             "rock" -> {
+                 binding.ivRockPlayerRight.resources.getColor(R.color.colorPrimaryDark)
+             }
+             else -> {
+                 binding.ivPaperPlayerRight.resources.getColor(R.color.colorPrimaryDark)
+             }
+         }
+     }
 
     @SuppressLint("ResourceAsColor")
     override fun onCreate(savedInstanceState: Bundle?) {
